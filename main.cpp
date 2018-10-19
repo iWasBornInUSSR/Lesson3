@@ -2,7 +2,7 @@
 #include <ctime>
 #include <conio.h>
 
-#include "Tree.h"
+#include "source/Tree.h"
 using namespace std;
 int main() {
     int n = 0;
