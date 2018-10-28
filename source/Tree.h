@@ -63,6 +63,7 @@ public:
     int DFS( );	// обходы дерева
     int BFS( );
     void OutTree( );	// выдача на экран
+
 };
 // constructor
 Tree ::	Tree(char nm, char mnm, int mxr):
@@ -107,8 +108,7 @@ void Tree :: OutNodes(Node * v, int r, int c)
         // if (v->mdl) OutNode(v->mdl, r + 1, c);	— средний сын (если нужно)
         if (v->rgt) OutNodes(v->rgt, r + 1, c + (offset >> r)); //правый сын
     }
-}
-int Tree :: DFS( )
+}int Tree :: DFS( )
 { const int MaxS = 20; // максимальный размер стека
     int count = 0;
     STACK <Node *> S(MaxS);  //создание стека указателей на узлы
@@ -129,11 +129,11 @@ int Tree :: BFS( )
     Q.push(root); // QUEUE <- root поместить в очередь корень дерева
     while (!Q.empty( )) //пока очередь не пуста
     { 	Node * v = Q.front( ); Q.pop( );// взять из очереди,
+        //if(!(v->lft) && !(v->rgt)) cout << "List founded" << endl;
         cout << v->d << '_'; ++count; // выдать тег, счёт узлов
         if (v->lft) Q.push(v->lft); // QUEUE <- (левый сын) put -> push
         if (v->rgt) Q.push(v->rgt); // QUEUE <- (правый сын)
     }
     return count;
 }
-
 #endif //LESSON3_TREE_H

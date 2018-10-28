@@ -1,10 +1,13 @@
 #include <iostream>
 #include <ctime>
-#include <conio.h>
+#include <fstream>
 
 #include "source/Tree.h"
 using namespace std;
 int main() {
+//    std::ofstream out("../out.txt");
+//    //std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+//    std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
     int n = 0;
     Tree Tr('a', 'z', 8);
     srand(time(nullptr));
